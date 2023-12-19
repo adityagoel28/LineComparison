@@ -28,13 +28,16 @@ public class LineComparison {
         double distance2 = Math.sqrt(Math.pow(x4 - x3, 2) + Math.pow(y4 - y3, 2));
         System.out.printf("Distance of the second line: %.2f\n", distance2);
 
-        // Comparing the two distances using equals method
+        // Comparing the two distances
+        // compare using equals method
         boolean eq = Double.valueOf(distance1).equals(Double.valueOf(distance2));
-
+        int length = Double.compare(distance1, distance2); // using CompareTo method
         if(eq) {
-            System.out.println("Both lines are equal");
+            System.out.println("Both lines are of equal length.");
+        } else if (length > 0) {
+            System.out.println("The first line is longer.");
         } else {
-            System.out.println("Both lines are not equal");
+            System.out.println("The second line is longer.");
         }
     }
 }
