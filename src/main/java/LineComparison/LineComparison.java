@@ -31,7 +31,9 @@ public class LineComparison {
         // Comparing the two distances
         // compare using equals method
         boolean eq = Double.valueOf(distance1).equals(Double.valueOf(distance2));
-        int length = Double.compare(distance1, distance2); // using CompareTo method
+        Double distance1_obj = Double.valueOf(distance1);
+        Double distance2_obj = Double.valueOf(distance2);
+        int length = distance1_obj.compareTo(distance2_obj); // using CompareTo method
         if(eq) {
             System.out.println("Both lines are of equal length.");
         } else if (length > 0) {
